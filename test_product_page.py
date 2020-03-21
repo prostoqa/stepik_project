@@ -93,6 +93,7 @@ class TestUserAddToBasketFromProductPage():
         page.open()
         page.should_not_be_success_message()
 
+    @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
         page = ProductPage(browser, self.link)
         page.open()

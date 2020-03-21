@@ -7,20 +7,29 @@ class BasePageLocators():
     BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-group .btn:nth-child(1)")
     USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
+
 class BasketPageLocators():
-    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, "#content_inner p")
+    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, "#content_inner")
     PRODUCT_IN_BASKET = (By.CSS_SELECTOR, ".basket-items")
 
+
 class MainPageLocators:
-    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".icon-ok-sign")
+    TEXT_MESSAGE = (By.CSS_SELECTOR, ".alertinner")
+
 
 class LoginPageLocators:
-    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
     REGISTRATION_EMAIL = (By.CSS_SELECTOR, "[name='registration-email']")
     REGISTRATION_PASSWORD = (By.CSS_SELECTOR, "[name='registration-password1']")
     CONFIRM_PASSWORD = (By.CSS_SELECTOR, "[name='registration-password2']")
     REGISTER_BUTTON = (By.CSS_SELECTOR, "[name='registration_submit']")
+    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
+    LOGIN_EMAIL = (By.CSS_SELECTOR, "[name='login-username']")
+    LOGIN_PASSWORD = (By.CSS_SELECTOR, "[name='login-password']")
+    LOGIN_BUTTON = (By.CSS_SELECTOR, "[name='login_submit']")
+    RECOVERY_LINK = (By.CSS_SELECTOR, "#login_form a")
+
 
 class ProductPageLocators:
     ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
@@ -30,3 +39,8 @@ class ProductPageLocators:
     PRICE_IN_MESSAGE = (By.CSS_SELECTOR, ".alert:nth-child(3) strong")
     MESSAGE_PRODUCT_ADDED_TO_BASKET = (By.CSS_SELECTOR, ".alert:nth-child(1)")
     MESSAGE_BASKET_TOTAL_PRICE = (By.CSS_SELECTOR, ".alert:nth-child(3)")
+
+
+class RecoveryPageLocators:
+    RESET_EMAIL = (By.CSS_SELECTOR, "#id_email")
+    RESET_BUTTON = (By.CSS_SELECTOR, ".btn-lg")

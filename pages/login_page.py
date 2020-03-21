@@ -3,6 +3,9 @@ from .locators import LoginPageLocators
 
 
 class LoginPage(BasePage):
+    def go_to_recovery_password(self):
+        self.browser.find_element(*LoginPageLocators.RECOVERY_LINK).click()
+
     def register_new_user(self, email, password):
         self.browser.find_element(*LoginPageLocators.REGISTRATION_EMAIL).send_keys(email)
         self.browser.find_element(*LoginPageLocators.REGISTRATION_PASSWORD).send_keys(password)
@@ -22,3 +25,8 @@ class LoginPage(BasePage):
 
     def should_be_register_form(self):
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Register form is not presented"
+
+    def user_log_in(self, email, password):
+        self.browser.find_element(*LoginPageLocators.LOGIN_EMAIL).send_keys(email)
+        self.browser.find_element(*LoginPageLocators.LOGIN_PASSWORD).send_keys(password)
+        self.browser.find_element(*LoginPageLocators.LOGIN_BUTTON).click()

@@ -20,7 +20,8 @@ class ProductPage(BasePage):
         assert product_message == self.product_name(), "Wrong product name in message"
 
     def should_be_message_basket_total_price(self):
-        assert self.is_element_present(*ProductPageLocators.MESSAGE_BASKET_TOTAL_PRICE), "No message with total price"
+        assert self.is_element_present(*ProductPageLocators.MESSAGE_BASKET_TOTAL_PRICE), \
+            "No message with total price"
         price_message = self.browser.find_element(*ProductPageLocators.PRICE_IN_MESSAGE).text
         assert price_message == self.price_of_product(), "Wrong total price in message"
 
